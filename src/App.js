@@ -10,8 +10,8 @@ const App = (props) => {
   const showProgress = (progress) => {
     setProgress(progress)
   }
-  return (
 
+  return (
     <div>
       <BrowserRouter>
         <Navbar />

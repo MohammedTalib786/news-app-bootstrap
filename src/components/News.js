@@ -36,10 +36,15 @@ const News = (props) => {
         })()
     }
 
+    const capitalizeFirstLetter = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+    document.title = `NewsMonkey - ${capitalizeFirstLetter(props.category)}`
 
     return (
         <div>
-            <h1 className='py-4 text-center '>Top Headlines</h1>
+            <h1 className='py-4 text-center ' style={{color: '#6B21A8'}} >Top Headlines - {capitalizeFirstLetter(props.category)} </h1>
             {loader && <Loading />}
             <div className="container my-3">
                 <div className="d-flex justify-content-center gap-5 flex-wrap ">
@@ -69,6 +74,6 @@ News.propTypes = {
 
 News.defaultProps = {
     category: 'general',
-    pageSize: 12
+    pageSize: 9
 }
 export default News;

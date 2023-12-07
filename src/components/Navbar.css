@@ -1,0 +1,9 @@
+.navbar{
+    height: 5rem;
+}
+.nav-link , .navbar-brand{
+    color:#6B21A8;
+    font-weight: 500;
+}
+
+

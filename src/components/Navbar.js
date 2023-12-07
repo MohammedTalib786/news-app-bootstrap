@@ -1,4 +1,5 @@
 import React from 'react'
+import './Navbar.css'
 
 const Navbar = () => {
   return (
@@ -11,28 +12,29 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">Home</a>
+              <a className="nav-link"  aria-current="page" href="/">Home</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/business">business</a>
+              <a className="nav-link" href="/business">Business</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/entertainment">entertainment</a>
+              <a className="nav-link" href="/entertainment">Entertainment</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/health">health</a>
+              <a className="nav-link" href="/health">Health</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/science">science</a>
+              <a className="nav-link" href="/science">Science</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/sports">sports</a>
+              <a className="nav-link" href="/sports">Sports</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/technology">technology</a>
+              <a className="nav-link" href="/technology">Technology</a>
             </li>
           </ul>
         </div>
+        {/* <li>Hello</li> */}
       </div>
     </nav>
   )
