@@ -11,6 +11,10 @@ const App = (props) => {
     setProgress(progress)
   }
 
+  // Pending Tasks:
+  // Include Dark Mode and get icon with font Awsome
+
+
   return (
     <div>
       <BrowserRouter>
@@ -32,7 +36,6 @@ const App = (props) => {
         </Routes>
       </BrowserRouter>
     </div>
-
   )
 }
 
