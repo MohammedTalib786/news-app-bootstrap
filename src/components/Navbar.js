@@ -1,40 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Navbar.css'
+import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (props) => {
+
+
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary"  >
+    <nav className="navbar navbar-expand-lg " style={{ backgroundColor: props.navBg }} >
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">NewsMonkey</a>
+        <Link className="navbar-brand" style={{ color: props.navText }} to="/">NewsMonkey</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="/">Home</a>
+              <Link className={`nav-link  `} style={{ color: props.navText }} aria-current="page" to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/business">Business</a>
+              <Link className={`nav-link  `} style={{ color: props.navText }} to="/business">Business</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/entertainment">Entertainment</a>
+              <Link className={`nav-link  `} style={{ color: props.navText }} to="/entertainment">Entertainment</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/health">Health</a>
+              <Link className={`nav-link  `} style={{ color: props.navText }} to="/health">Health</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/science">Science</a>
+              <Link className={`nav-link  `} style={{ color: props.navText }} to="/science">Science</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/sports">Sports</a>
+              <Link className={`nav-link  `} style={{ color: props.navText }} to="/sports">Sports</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/technology">Technology</a>
+              <Link className={`nav-link  `} style={{ color: props.navText }} to="/technology">Technology</Link>
             </li>
           </ul>
         </div>
-        {/* <li>Hello</li> */}
+        <button id='moon' onClick={props.handlerDarkMode} ><i className="fa-solid fa-moon"></i></button>
       </div>
     </nav>
   )

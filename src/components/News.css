@@ -1,13 +1,13 @@
 /* Btn  */
 #onTop {
-    background-color: #6b21a8;
+    background-color: #9333EA;
     color: white;
     width: 3rem;
     height: 3rem;
     outline: 0;
     border: 0;
     position: sticky;
-    top: 34rem;
+    top: 33rem;
     left: 76rem;
     z-index: 99;
     border-radius: 50%;

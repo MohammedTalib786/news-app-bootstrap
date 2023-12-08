@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import NewsItem from './NewsItem'
 import InfiniteScroll from "react-infinite-scroll-component";
 import Loading from './Loading';
+import Navbar from './Navbar';
 
 
 const News = (props) => {
@@ -24,7 +25,6 @@ const News = (props) => {
             setLoader(false)
         }
         used()
-
     }, [])
 
     const fetchMoreData = async () => {
@@ -42,22 +42,24 @@ const News = (props) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
-    const topBtn = () => {
+    const onTopFunction = () => {
         window.scrollTo(0, 0)
     }
 
     document.title = `NewsMonkey - ${capitalizeFirstLetter(props.category)}`
+    document.body.style.backgroundColor = props.documentBg
 
     return (
-        <div>
-            <h1 className='py-5 text-center ' style={{ color: '#6B21A8' }} >Top Headlines - {capitalizeFirstLetter(props.category)} </h1>
-            <button id='onTop' onClick={topBtn} > <i className="fa-solid fa-arrow-up"></i> </button>
+        <div >
+            {/* style={{backgroundColor: props.documentBg}} */}
+            <h1 className='pt-5 text-center ' style={{ color: '#9333EA' }} >Top Headlines - {capitalizeFirstLetter(props.category)} </h1>
+            <button id='onTop' onClick={onTopFunction} > <i className="fa-solid fa-arrow-up"></i> </button>
             {loader && <Loading />}
-            <div className="container ">
+            <div className='container py-5 ' >
                 <div className="d-flex justify-content-center gap-5 flex-wrap ">
                     {loader || articles.map(e => {
                         return <div key={e.url} className=''>
-                            <NewsItem title={e.title} description={e.description} author={e.author} url={e.url} urlToImage={e.urlToImage} />
+                            <NewsItem cardBg={props.cardBg} cardTextTitle={props.cardTextTitle} cardText={props.cardText} title={e.title} description={e.description} author={e.author} url={e.url} urlToImage={e.urlToImage} />
                         </div>
                     })}
                 </div>
@@ -67,7 +69,6 @@ const News = (props) => {
                     hasMore={articles.length !== totalResults}
                     loader={<Loading />}
                 >
-
                 </InfiniteScroll>
             </div>
 
